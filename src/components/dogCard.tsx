@@ -30,7 +30,7 @@ export function DogCard(): JSX.Element {
   }
   return (
     <>
-      <img src={dogInfo?.message} />
+      <img src={dogInfo?.message} alt={dogInfo?.message}/>
       <button onClick={() => handleVote(dogBreed)}>{dogBreed}</button>
     </>
   );
