@@ -23,7 +23,7 @@ export function DogCard(): JSX.Element {
   const dogBreed = urlInfo && urlInfo[4].replace("-", " ").toUpperCase();
 
   function handleVote(dogBreed: string | undefined) {
-    axios.post("http://localhost:4000/", {
+    axios.post("https://dog-breed-vote-sevgi-keadeish.herokuapp.com/", {
       breedName: dogBreed,
     });
     window.location.reload();
