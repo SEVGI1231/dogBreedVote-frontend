@@ -1,7 +1,12 @@
-import { greet } from "./utils/greet";
+import { PickDog } from "./components/PickDog";
+import "./App.css";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return (
+    <>
+      <PickDog />
+    </>
+  );
 }
 
 export default App;
