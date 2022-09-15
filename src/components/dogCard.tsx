@@ -37,7 +37,7 @@ export function DogCard(): JSX.Element {
           className="dog-img"
           variant="top"
           src={dogInfo?.message}
-          alt={dogInfo?.message}
+          alt={dogBreed}
         />
         <Card.Body>
           <Button
@@ -49,8 +49,6 @@ export function DogCard(): JSX.Element {
           </Button>
         </Card.Body>
       </Card>
-      {/* <img src={dogInfo?.message} alt={dogInfo?.message}/> */}
-      {/* <button onClick={() => handleVote(dogBreed)}>{dogBreed}</button> */}
     </>
   );
 }
