@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { IDogInfo } from "../types";
+import { Button, Card } from "react-bootstrap";
 
 export function DogCard(): JSX.Element {
   const [dogInfo, setDogInfo] = useState<IDogInfo>();
@@ -30,8 +31,16 @@ export function DogCard(): JSX.Element {
   }
   return (
     <>
-      <img src={dogInfo?.message} alt={dogInfo?.message}/>
-      <button onClick={() => handleVote(dogBreed)}>{dogBreed}</button>
+      <Card className="text-centre">
+        <Card.Img variant="top" src={dogInfo?.message} alt={dogInfo?.message} />
+        <Card.Body>
+          <Button onClick={() => handleVote(dogBreed)} variant="primary">
+            {dogBreed}
+          </Button>
+        </Card.Body>
+      </Card>
+      {/* <img src={dogInfo?.message} alt={dogInfo?.message}/> */}
+      {/* <button onClick={() => handleVote(dogBreed)}>{dogBreed}</button> */}
     </>
   );
 }
