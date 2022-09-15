@@ -1,3 +1,13 @@
 .twoDogs {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-centre {
+  margin: 10px;
+  align-items: center;
+}
+.dog-img {
+  width: 400px;
+  height: 400px;
 }
