@@ -1,12 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import { IOneDogVote } from "../types";
+import { TopThreeDogs } from "./TopThreeDogs";
 
-interface IOneDogVote {
-  breed_id: number;
-  breed_name: string;
-  votes: number;
-}
+
 export function LeaderBoard(): JSX.Element {
   const [topTenDogs, setTopTenDogs] = useState<IOneDogVote[]>();
   async function getTopTen() {
@@ -32,10 +30,11 @@ export function LeaderBoard(): JSX.Element {
       <h1>LeaderBoard</h1>
       {topTenDogs &&
         topTenDogs.map((oneDog: IOneDogVote) => (
-                <li key={oneDog.breed_id}>{oneDog.breed_name} - {oneDog.votes}</li>
+            <li key={oneDog.breed_id}>{oneDog.breed_name} - {oneDog.votes}</li>
         ))}
         <Button variant="success"
             size="lg" onClick={()=> handleRefreshButton()}>Refresh</Button>
+        
     </>
   );
 }
