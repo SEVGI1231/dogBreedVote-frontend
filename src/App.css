@@ -11,3 +11,16 @@
   width: 400px;
   height: 400px;
 }
+.leaderboard{
+    width: 402px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.leaderbord-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
