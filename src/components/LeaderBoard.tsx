@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Card, ListGroup } from "react-bootstrap";
 import { IOneDogVote } from "../types";
 
 export function LeaderBoard(): JSX.Element {
@@ -24,17 +24,22 @@ export function LeaderBoard(): JSX.Element {
   }
 
   return (
-    <>
-      <h1>LeaderBoard</h1>
-      {topTenDogs &&
+    <div className="leaderbord-container">
+        <Card className="leaderboard mb-2 text-centre" border="success"  >
+            <Card.Header>LEADER BOARD</Card.Header>
+            <ListGroup variant="flush"></ListGroup>
+            {topTenDogs &&
         topTenDogs.map((oneDog: IOneDogVote) => (
-          <li key={oneDog.breed_id}>
+          <ListGroup.Item key={oneDog.breed_id}>
             {oneDog.breed_name} - {oneDog.votes}
-          </li>
-        ))}
-      <Button variant="success" size="lg" onClick={() => handleRefreshButton()}>
+          </ListGroup.Item>
+           ))}
+            <Button variant="success" size="lg" onClick={() => handleRefreshButton()}>
         Refresh
       </Button>
-    </>
+        </Card>
+     
+     
+    </div>
   );
 }
