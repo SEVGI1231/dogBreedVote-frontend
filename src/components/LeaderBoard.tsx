@@ -25,21 +25,23 @@ export function LeaderBoard(): JSX.Element {
 
   return (
     <div className="leaderbord-container">
-        <Card className="leaderboard mb-2 text-centre" border="success"  >
-            <Card.Header>LEADER BOARD</Card.Header>
-            <ListGroup variant="flush"></ListGroup>
-            {topTenDogs &&
-        topTenDogs.map((oneDog: IOneDogVote) => (
-          <ListGroup.Item key={oneDog.breed_id}>
-            {oneDog.breed_name} - {oneDog.votes}
-          </ListGroup.Item>
-           ))}
-            <Button variant="success" size="lg" onClick={() => handleRefreshButton()}>
-        Refresh
-      </Button>
-        </Card>
-     
-     
+      <Card className="leaderboard mb-2 text-centre" border="success">
+        <Card.Header>LEADER BOARD</Card.Header>
+        <ListGroup variant="flush"></ListGroup>
+        {topTenDogs &&
+          topTenDogs.map((oneDog: IOneDogVote) => (
+            <ListGroup.Item key={oneDog.breed_id}>
+              {oneDog.breed_name} - {oneDog.votes}
+            </ListGroup.Item>
+          ))}
+        <Button
+          variant="success"
+          size="lg"
+          onClick={() => handleRefreshButton()}
+        >
+          Refresh
+        </Button>
+      </Card>
     </div>
   );
 }
