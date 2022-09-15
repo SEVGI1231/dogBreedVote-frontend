@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { IDogInfo } from "../types";
 import { Button, Card } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 
 export function DogCard(): JSX.Element {
   const [dogInfo, setDogInfo] = useState<IDogInfo>();
@@ -33,9 +33,18 @@ export function DogCard(): JSX.Element {
   return (
     <>
       <Card className="text-centre">
-        <Card.Img className="dog-img" variant="top" src={dogInfo?.message} alt={dogInfo?.message} />
+        <Card.Img
+          className="dog-img"
+          variant="top"
+          src={dogInfo?.message}
+          alt={dogInfo?.message}
+        />
         <Card.Body>
-          <Button onClick={() => handleVote(dogBreed)} variant="success">
+          <Button
+            onClick={() => handleVote(dogBreed)}
+            variant="success"
+            size="lg"
+          >
             {dogBreed}
           </Button>
         </Card.Body>
